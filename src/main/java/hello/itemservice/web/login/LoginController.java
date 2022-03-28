@@ -2,6 +2,7 @@ package hello.itemservice.web.login;
 
 import hello.itemservice.domain.login.LoginService;
 import hello.itemservice.domain.member.Member;
+import hello.itemservice.web.member.MemberFirebaseServiceImpl;
 import hello.itemservice.web.SessionConst;
 import hello.itemservice.web.session.SessionManager;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +27,7 @@ public class LoginController {
 
     private final LoginService loginService;
     private final SessionManager sessionManager;
+    private MemberFirebaseServiceImpl firebaseService;
 
     @GetMapping("/login")
     public String loginForm(@ModelAttribute("loginForm") LoginForm form){
@@ -33,7 +35,7 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String loginV4(@Valid @ModelAttribute LoginForm form, BindingResult bindingResult,
+    public String login(@Valid @ModelAttribute LoginForm form, BindingResult bindingResult,
                           @RequestParam(defaultValue = "/") String redirectURL,
                           HttpServletRequest request){
         if(bindingResult.hasErrors()) {
@@ -59,7 +61,7 @@ public class LoginController {
     }
 
     @PostMapping("/logout")
-    public String logoutV3(HttpServletRequest request) {
+    public String logout(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
 
         if (session != null) {

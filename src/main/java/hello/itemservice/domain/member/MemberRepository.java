@@ -1,7 +1,9 @@
 package hello.itemservice.domain.member;
 
+import hello.itemservice.web.member.MemberFirebaseServiceImpl;
 import jdk.jfr.Registered;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -12,7 +14,7 @@ public class MemberRepository {
     private static Map<Long, Member> store = new HashMap<>();
     private static long sequence = 0L;
 
-    public Member save(Member member) {
+    public Member save(Member member){
         member.setId(++sequence);
         log.info("save : member={}", member);
         store.put(member.getId(), member);

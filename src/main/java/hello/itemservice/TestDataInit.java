@@ -4,7 +4,9 @@ import hello.itemservice.domain.item.Item;
 import hello.itemservice.domain.item.ItemRepository;
 import hello.itemservice.domain.member.Member;
 import hello.itemservice.domain.member.MemberRepository;
+import hello.itemservice.web.member.MemberFirebaseService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -15,11 +17,13 @@ public class TestDataInit {
 
     private final ItemRepository itemRepository;
     private final MemberRepository memberRepository;
+
     /**
-     * 테스트용 데이터 추가
+     * 테스트용 데이터
      */
     @PostConstruct
-    public void init() {
+    public void init(){
+
         itemRepository.save(new Item("itemA", 10000, 10));
         itemRepository.save(new Item("itemB", 20000, 20));
 
