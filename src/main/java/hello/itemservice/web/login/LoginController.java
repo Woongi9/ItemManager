@@ -1,12 +1,18 @@
 package hello.itemservice.web.login;
 
+import hello.itemservice.domain.item.Item;
+import hello.itemservice.domain.item.ItemRepository;
 import hello.itemservice.domain.login.LoginService;
 import hello.itemservice.domain.member.Member;
+import hello.itemservice.domain.member.MemberRepository;
+import hello.itemservice.web.item.ItemFirebaseService;
+import hello.itemservice.web.member.MemberFirebaseService;
 import hello.itemservice.web.member.MemberFirebaseServiceImpl;
 import hello.itemservice.web.SessionConst;
 import hello.itemservice.web.session.SessionManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +25,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -27,10 +34,28 @@ public class LoginController {
 
     private final LoginService loginService;
     private final SessionManager sessionManager;
-    private MemberFirebaseServiceImpl firebaseService;
+    private final MemberRepository memberRepository;
+    private List<Member> members;
+    private int count = 0;
+    @Autowired
+    MemberFirebaseService memberFirebaseService;
 
+    //로그인 화면 띄우면서 파이어베이스 데베 회원 정보 리포지토리에 저장
     @GetMapping("/login")
-    public String loginForm(@ModelAttribute("loginForm") LoginForm form){
+    public String loginForm(@ModelAttribute("loginForm") LoginForm form) throws Exception{
+
+        members = memberRepository.findAll();
+        count = members.size()+1;
+        Member tem = memberFirebaseService.getMemberDetail(String.valueOf(count));
+
+        while (tem != null) {
+            members.add(tem);
+            memberRepository.save(tem);
+            count++;
+            tem = memberFirebaseService.getMemberDetail(String.valueOf(count));
+        }
+
+//        System.out.println(members.size() + ", count : " + count + ", memberRepository : " + memberRepository.findAll().size());
         return "login/loginForm";
     }
 
@@ -76,6 +101,4 @@ public class LoginController {
         cookie.setMaxAge(0);
         response.addCookie(cookie);
     }
-
-
 }

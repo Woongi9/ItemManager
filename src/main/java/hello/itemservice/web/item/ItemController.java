@@ -74,7 +74,7 @@ public class ItemController {
             count++;
             tem = firebaseService.getItemDetail(String.valueOf(count));
         }
-        System.out.println(items.size() + ", count : " + count + ", itemrepository : " + itemRepository.findAll().size());
+//        System.out.println(items.size() + ", count : " + count + ", itemrepository : " + itemRepository.findAll().size());
         return "items/items";
     }
 

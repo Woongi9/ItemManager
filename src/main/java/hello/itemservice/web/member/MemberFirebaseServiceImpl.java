@@ -14,13 +14,6 @@ public class MemberFirebaseServiceImpl implements MemberFirebaseService{
 
     public static final String COLLECTION_NAME = "member";
 
-    @Override
-    public String insertMember(Member member) throws Exception {
-        Firestore firestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> apiFuture = firestore.collection(COLLECTION_NAME).document(String.valueOf(member.getId())).set(member);
-        return apiFuture.get().getUpdateTime().toString();
-    }
-
     //파이어베이스 데이터베이스에 값이 있는지 비교
     @Override
     public Member getMemberDetail(String id) throws Exception {
