@@ -58,11 +58,14 @@ public class ItemController {
     }
 
     //파이어베이스 데베의 값 모두 출력
+    //맨처음 들어올 때만 파이어베이스 데이터베이스 불러오기
     @GetMapping
     public String items(Model model) throws Exception{
+
         //테스트 아이템 2가지 추가
         items = itemRepository.findAll();
         count = items.size()+1;
+        System.out.println(count);
         model.addAttribute("items", items);
         Item tem = firebaseService.getItemDetail(String.valueOf(count));
 
@@ -74,7 +77,6 @@ public class ItemController {
             count++;
             tem = firebaseService.getItemDetail(String.valueOf(count));
         }
-//        System.out.println(items.size() + ", count : " + count + ", itemrepository : " + itemRepository.findAll().size());
         return "items/items";
     }
 

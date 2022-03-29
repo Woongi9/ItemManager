@@ -9,17 +9,35 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/members")
 public class MemberController {
     private final MemberRepository memberRepository;
+    private List<Member> members;
+    private int count = 0;
     @Autowired
     MemberFirebaseService firebaseService;
 
+    //ID 저장을 위해 판단후 회원가입 페이지 불러오기
+    //홈에서 처음 온 경우 파이어베이스 데베에 정보를 리포지토리에 저장 후 불러오기
     @GetMapping("/addMemberForm")
-    public String addMemberForm(@ModelAttribute("member") Member member) {
+    public String addMemberForm(@ModelAttribute("member") Member member) throws Exception {
+
+        if (count == 0 && memberRepository.findAll().size() == 0) {
+            members = memberRepository.findAll();
+            count = members.size() + 1;
+            Member tem = firebaseService.getMemberDetail(String.valueOf(count));
+
+            while (tem != null) {
+                members.add(tem);
+                memberRepository.save(tem);
+                count++;
+                tem = firebaseService.getMemberDetail(String.valueOf(count));
+            }
+        }
         return "members/addMemberForm";
     }
 

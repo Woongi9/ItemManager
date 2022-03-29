@@ -44,18 +44,20 @@ public class LoginController {
     @GetMapping("/login")
     public String loginForm(@ModelAttribute("loginForm") LoginForm form) throws Exception{
 
-        members = memberRepository.findAll();
-        count = members.size()+1;
-        Member tem = memberFirebaseService.getMemberDetail(String.valueOf(count));
+        if(count == 0)
+        {
+            members = memberRepository.findAll();
+            count = members.size()+1;
+            Member tem = memberFirebaseService.getMemberDetail(String.valueOf(count));
 
-        while (tem != null) {
-            members.add(tem);
-            memberRepository.save(tem);
-            count++;
-            tem = memberFirebaseService.getMemberDetail(String.valueOf(count));
+            while (tem != null) {
+                members.add(tem);
+                memberRepository.save(tem);
+                count++;
+                tem = memberFirebaseService.getMemberDetail(String.valueOf(count));
+            }
         }
 
-//        System.out.println(members.size() + ", count : " + count + ", memberRepository : " + memberRepository.findAll().size());
         return "login/loginForm";
     }
 

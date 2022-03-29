@@ -24,7 +24,6 @@ public class MemberFirebaseServiceImpl implements MemberFirebaseService{
         Member member = null;
         if (documentSnapshot.exists()) {
             member = documentSnapshot.toObject(Member.class);
-            System.out.println("id = " + id + ", member : " + member);
             return member;
         }else{
             return null;
@@ -35,7 +34,7 @@ public class MemberFirebaseServiceImpl implements MemberFirebaseService{
     @Override
     public String updateMember(Member member) throws Exception {
         Firestore firestore = FirestoreClient.getFirestore();
-        ApiFuture<WriteResult> apiFuture = firestore.collection(COLLECTION_NAME).document(String.valueOf(member.getLoginId())).set(member);
+        ApiFuture<WriteResult> apiFuture = firestore.collection(COLLECTION_NAME).document(String.valueOf(member.getId())).set(member);
         return apiFuture.get().getUpdateTime().toString();
     }
 }
