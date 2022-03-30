@@ -126,21 +126,21 @@
 ---
 ## <div id="핵심">핵심 기능</div>
 
-### <div id="로그인">로그인 & 로그아웃</div>
+#### <div id="로그인">로그인 & 로그아웃</div>
 
-### <div id="쿠키">쿠키 관리</div>
+#### <div id="쿠키">쿠키 관리</div>
 
-### <div id="세션">세션 관리</div>
+#### <div id="세션">세션 관리</div>
 
-### <div id="로그">로그 출력</div>
+#### <div id="로그">로그 출력</div>
 
-### <div id="타임아웃">타임아웃</div>
+#### <div id="타임아웃">타임아웃</div>
 
-### <div id="DB접근">Firebase DB 접근</div>
+#### <div id="DB접근">Firebase DB 접근</div>
 
-### <div id="items">아이템 상세정보</div>
+#### <div id="items">아이템 상세정보</div>
 
-### <div id="edit">아이템 정보 수정</div>
+#### <div id="edit">아이템 정보 수정</div>
 
 
 ---
