@@ -119,11 +119,11 @@
 ## <div id="핵심">핵심 기능</div>
 
 ### <div id="로그인">로그인 & 로그아웃</div>
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/79649052/160853513-5c150ebf-599e-4cf0-b7d8-7c0c94845038.png">
 - 파이어베이스에 저장되어있는 회원을 불러와 MemberRepository에 저장시킨 다음에 파라미터로 넘어온 password와 비교해서 같으면 회원을 반환하고, 만약 password가 다르면 null을 반환한다.(보안을 위해 세션 쿠키를 사용)
- <img width="468" alt="image" src="https://user-images.githubusercontent.com/79649052/160853513-5c150ebf-599e-4cf0-b7d8-7c0c94845038.png">
 
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/79649052/160855602-3c9d730f-84fd-418a-a0a3-8de3ef05dbfc.png">
 - 로그아웃시 LoginController에서 세션 쿠키이므로 웹 브라우저 종료시 서버에서 해당 쿠키의 종료 날짜를 0으로 지정하는 expireCookie함수를 사용한다.
-  <img width="468" alt="image" src="https://user-images.githubusercontent.com/79649052/160855602-3c9d730f-84fd-418a-a0a3-8de3ef05dbfc.png">
 
 ### <div id="쿠키">쿠키 관리</div>
 - 쿼리 파라미터를 계속 유지하면서 보내는 것은 매우 어렵고 번거로운 작업이기에 쿠키를 사용한다. 브라우저를 종료시 까지만 유지하므로 세션 쿠키를 사용한다. 로그인 쿠키가 없는 사용자는 기존 home 화면으로 보낸다. 로그인 쿠키가 있는 사용자는 로그인 사용자 전용 홈 화면인 loginHome으로 보낸다.
@@ -186,6 +186,7 @@
 
 
 ### <div id="items">타임리프, 체크박스, 라디오 버튼, 셀렉트 박스</div>
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/79649052/160878200-e432c7c4-1838-4098-9f86-1ebc0310cbb2.png">
 
 <img width="468" alt="image" src="https://user-images.githubusercontent.com/79649052/160874349-fab24b5a-4207-4909-853b-0f6a0b845ccf.png">
 
@@ -197,6 +198,9 @@
 
 ## <div id="느낀점">프로젝트를 통해 느낀점</div>
 
+*  그동안 배웠던 스프링 부트와 백엔드에 대해 배운 것을 혼자서 프로젝트를 만드는게 확실히 많이 도움이 되는 것 같다. 강의로 들으면서 따라 치고, 따로 자료를 볼 때는 막연하게 느끼던 개념들을 확실히 직접 생각하고, 부딪혀 보니까 많이 성장함을 느꼈다. 하루에 밥을 먹고, 운동하고, 씻는 시간을 제외한 눈을 뜨고 감을 때까지 이 프로젝트에 열중하고 몰입할 수 있는 시간이었다.
+*  지금의 부족한 점 때문에 계속 발전하고 싶다. 다른 프로젝트나 훗날 이 일을 업으로 삼고, 일했을 때 지금과 같은 열정과 성취감으로 발전하는 개발자가 되고싶다. 
+*  아직 부족한 점이 많다. 앞으로 이 프로젝트는 현재 배우고있는 JPA도 사용하고, UI도 더 보기 좋게 바꿔놓을 것이다.
 
 
 ---
