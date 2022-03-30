@@ -87,7 +87,7 @@
 
 ## <div id="화면">실행 화면</div> 
 
-<img src="https://user-images.githubusercontent.com/79649052/160763454-735a8366-e715-46f9-8bc6-19ea2e8ea010.gif" width="400" height="280"/>
+<img src="https://user-images.githubusercontent.com/79649052/160763454-735a8366-e715-46f9-8bc6-19ea2e8ea010.gif" width="400" height="250"/>
 <1. 로그인>
 
 
