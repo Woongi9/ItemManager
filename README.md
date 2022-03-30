@@ -21,7 +21,7 @@
   + [타임아웃](#타임아웃)
   + [Firebase DB 접근](#DB접근)
   + [타임리프, 체크박스, 라디오 버튼, 셀렉트 박스](#items)
-- [보완할 점](#보완)
+- [프로젝트를 통해 느낀점](#느낀점)
 
 
 ---
@@ -130,9 +130,8 @@
 ### <div id="세션">세션 관리</div>
 - 쿠키 값은 변경이 가능하므로 보관된 정보를 외부인이 쉽게 가져갈 수 있는 문제가 있기에 쿠키에 중요 값을 노출하지 않고, 임의의 토큰을 노출하는 방법인 세션 쿠키를 사용한다.
   + loginId, password 정보를 전달하면 서버에서 해당 사용자가 맞는지 확인한다.
-  + 
   
-  <img width="468" alt="image" src="https://user-images.githubusercontent.com/79649052/160859285-fff3b758-9c17-4d25-9555-08edaaa3db15.png">
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/79649052/160859285-fff3b758-9c17-4d25-9555-08edaaa3db15.png">
   + 세션 ID를 생성하는데 randomUUID를 사용하여 임의의 값을 쿠키 값으로 가진다.
   
 
@@ -195,7 +194,7 @@
 
 ---
 
-## <div id="보완">보완할 점</div>
+## <div id="느낀점">프로젝트를 통해 느낀점</div>
 
 
 
