@@ -73,7 +73,8 @@
 ---
 ## <div id="패키지">패키징 구조</div>
 
-![img.png](img.png)![img_1.png](img_1.png)
+![img](https://user-images.githubusercontent.com/79649052/160853661-8e0350e5-452b-4bba-8370-7798781654b2.png)
+![img_1](https://user-images.githubusercontent.com/79649052/160853691-f06cfa6a-dae9-4d3f-87e3-3c4b0d6d0f83.png)
 
 
 ---
