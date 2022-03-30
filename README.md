@@ -87,23 +87,29 @@
 
 ## <div id="화면">실행 화면</div> 
 
+#### 1. 로그인
 <img src="https://user-images.githubusercontent.com/79649052/160763454-735a8366-e715-46f9-8bc6-19ea2e8ea010.gif" width="400" height="250"/>
-<1. 로그인>
 
+
+#### 2. 회원가입시 데베 추가
 <img src="https://user-images.githubusercontent.com/79649052/160763390-64838d35-5f26-412b-a32c-38ebde6269e2.gif" width="400" height="250"/>
-<2. 회원가입시 데베 추가>
 
+
+#### 3. 비로그인 상태에서 상품관리창 접근시 필터 작용
 <img src="https://user-images.githubusercontent.com/79649052/160763471-80863390-e1f6-466b-a74a-5ad7540acebf.gif" width="400" height="250"/>
-<3. 비로그인 상태에서 상품관리창 접근시 필터 작용>
 
+
+#### 4. 데베에서 불러온 리스트 출력과 반응형 웹
 <img src="https://user-images.githubusercontent.com/79649052/160763508-f72f6b27-6616-4c08-9cf7-59e84e179eba.gif" width="400" height="250"/>
-<4. 데베에서 불러온 리스트 출력과 반응형 웹>
 
+
+#### 5. 아이템 상품 수정시 수정 내용 데베 업데이트
 <img src="https://user-images.githubusercontent.com/79649052/160763488-8d659b9e-e558-4b46-b450-b8f55bb75c5e.gif" width="400" height="250"/>
-<5. 아이템 상품 수정시 수정 내용 데베 업데이트>
 
+
+#### 6. 아이템 상품 추가시 데베 추가 상품 업데이트
 <img src="https://user-images.githubusercontent.com/79649052/160763496-f28f91c9-9cd6-43c6-8591-00392d1bc2c0.gif" width="400" height="250"/>
-<6. 아이템 상품 추가시 데베 추가 상품 업데이트>
+
 
 
 
