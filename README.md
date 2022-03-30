@@ -87,6 +87,8 @@
 
 ## <div id="화면">실행 화면</div> 
 
+<img src="https://github.com/Woongi9/ItemManager/blob/master/로그인.gif?raw=true" width="400" height="280">
+<로그인 화면>
 
 
 ---
