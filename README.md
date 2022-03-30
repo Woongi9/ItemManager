@@ -12,7 +12,8 @@
 - [패키징 구조](#패키지)
 - [실행 화면](#화면)
 - [시스템 아키텍처](#아케텍처)
-- [다이어그램](#다이어그램)
+- [E-R 다이어그램](#다이어그램)
+- [시퀀스 다이어그램](#시퀀스)
 - [핵심 기능](#핵심)
   + [로그인 & 로그아웃](#로그인)
   + [쿠키 생성](#쿠키)
@@ -112,8 +113,40 @@
 
 ---
 
-## <div id="다이어그램">다이어그램</div>
+## <div id="다이어그램">시퀀스 다이어그램</div>
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/79649052/160884813-2e96ed49-c764-4900-b4f6-ca493ac1fdc8.png">
 
+
+---
+
+## <div id="시퀀스">다이어그램</div>
+
+#### 회원가입과 로그인
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/79649052/160893120-d755c32c-c508-4cdc-a182-74abd0f0f10d.png">
+
+- 회원가입 클릭 후 addMemberForm.html 양식대로 작성하면 PostMapping 부분이 시작되어서 작성한 Member가 MemberRepository에 등록되며 Firebase DB에 updateMember() 함수로 추가하며 페이지는 다시 홈으로 돌아온다.
+- 로그인 하는 경우 loginForm.html 양식대로 작성하기전 먼저 MemberRepository에 Firebase DB 해당 멤버을 조회후 저장해준다. 그리고 로그인시 있는 멤버면 보안을 위해 LoginCheckFilter 클래스의 doFilter()가 작동하여 SessionCookie값을 할당해준다.
+  - 세션쿠키 값은 회원이 아니어도 들어갈 수 있는 whiteList에 저장된 페이지를 제외하고 이동마다 확인된다.
+
+
+#### 비로그인 상태에서 상품 관리 호출
+
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/79649052/160894123-3e9576bb-4174-4be4-948d-6ae87277ddb7.png">
+
+- 비로그인시 상태에서 상품관리 창에 들어가려면 LoginCheckFilter 클래스의 isLoginCheckPath() 함수에서 세션쿠키 값을 검사 받아야하는데 이 값이 없다면 로그인 창으로 넘어간 후 로그인 시 "/items" 창인 상품 관리 창으로 넘어간다   
+
+#### 아이템 목록 출력과 아이템 수정 
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/79649052/160900209-01bfdf8c-4498-44e6-a16d-dd3c7f6733ef.png">
+
+- 상품관리 창에 처음 들어오면 Firebase DB에서 아이템 데이터들을 조회하여 itemRepository에 저장하고 그 데이터들은 items.html의 타임리프 반복문인 th:each를 통해 출력된다.
+
+- 아이템 수정시에 작성 전에 해당 데이터는 삭제되며 새로 기입한 필드들은 새로운 Item 객체가 되어 itemRepository와 Firebase DB에 저장된다.
+
+
+#### 아이템 등록 
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/79649052/160897098-0013a554-9675-4eee-8347-f0e2034e8664.png">
+
+- 아이템 등록시 기입한 필드들은 새로운 Item 객체가 되어 itemRepository와 Firebase DB에 저장된다.
 
 ---
 ## <div id="핵심">핵심 기능</div>
