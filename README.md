@@ -115,7 +115,7 @@
 ---
 
 ## <div id="아키텍처">시스템 아키텍처</div>
-<img width="577" alt="image" src="https://user-images.githubusercontent.com/79649052/160829552-ecfff5a3-1288-4602-b035-b6beb99a70a2.png">
+<img width="577" alt="image" src="https://user-images.githubusercontent.com/79649052/160830171-4787b5fb-d9bf-4f36-8cd3-e8b975b00061.png">
 
 
 ---
