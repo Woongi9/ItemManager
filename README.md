@@ -13,7 +13,7 @@
 - [패키징 구조](#패키지)
 - [실행 화면](#화면)
 - [시스템 아키텍처](#아키텍처)
-- [E-R 다이어그램](#다이어그램)
+- [클래스 다이어그램](#다이어그램)
 - [시퀀스 다이어그램](#시퀀스)
 - [핵심 기능](#핵심)
   + [로그인 & 로그아웃](#로그인)
@@ -134,14 +134,14 @@
 
 ---
 
-## <div id="다이어그램">시퀀스 다이어그램</div>
+## <div id="다이어그램">클래스 다이어그램</div>
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/79649052/160884813-2e96ed49-c764-4900-b4f6-ca493ac1fdc8.png">
 
 <br></br>
 
 ---
 
-## <div id="시퀀스">다이어그램</div>
+## <div id="시퀀스">시퀀스 다이어그램</div>
 
 #### 회원가입과 로그인
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/79649052/160893120-d755c32c-c508-4cdc-a182-74abd0f0f10d.png">
